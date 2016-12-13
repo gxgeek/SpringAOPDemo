@@ -21,24 +21,4 @@
     <aop:aspectj-autoproxy/>
     <context:component-scan base-package="com.gx"/>
 
-
-<!--
-    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-        <property name="locations">
-            <list>
-                <value>classpath*:fileWriterService.properties</value>
-            </list>
-        </property>
-    </bean>
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-        <property name="properties" ref="configProperties" />
-    </bean>    
-	
-	<bean id="FileWriterService" class="com.gx.FileWriterService" >
-		<property name="" value=""/>
-	</bean>
--->
-
-	
-
 </beans>		       

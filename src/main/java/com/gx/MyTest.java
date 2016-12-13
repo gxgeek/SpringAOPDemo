@@ -27,6 +27,7 @@ public class MyTest {
         } catch (Exception e) {
 //            e.printStackTrace();
         }
+
         loginService.updateUser("admin");
         loginService.inquiryUser("GM");
         loginService.delUser("gx");

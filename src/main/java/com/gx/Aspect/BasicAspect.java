@@ -10,14 +10,12 @@ import org.springframework.stereotype.Component;
 /**
  * Created by gx on 2016/12/13.
  */
-
 @Component
 @Aspect
 public class BasicAspect {
     Logger logger = Logger.getLogger(BasicAspect.class);
     @Pointcut("execution(* com.gx.Service.*.*(..))")
     private  void arithmetic(){}
-
 
     @Around("arithmetic()")
     public Object aroundDeleteArticle(ProceedingJoinPoint proceedingJoinPoint){
