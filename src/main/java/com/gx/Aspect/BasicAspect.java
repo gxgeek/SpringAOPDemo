@@ -25,14 +25,16 @@ public class BasicAspect {
         //打印方法所有的参数列表
         logger.info("--------方法名："+proceedingJoinPoint.getSignature().getName());
         Object[] args = proceedingJoinPoint.getArgs();
+        logger.info("方法参数列表");
         for (Object arg : args){
-            logger.info("方法参数");
             logger.info(arg + " , ");
         }
         Object retValue = null;
         try {
             retValue = proceedingJoinPoint.proceed();
+            logger.info("正常执行");
         } catch (Throwable throwable) {
+            logger.info("抛出异常");
             logger.info(throwable.getMessage());
         }finally {
             logger.info("------方法执行之后------");
