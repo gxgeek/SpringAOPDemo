@@ -18,19 +18,21 @@ public class BasicAspect {
     @Pointcut("execution(* com.gx.Service.*.*(..))")
     private  void arithmetic(){}
 
-
     @Around("arithmetic()")
     public Object aroundDeleteArticle(ProceedingJoinPoint proceedingJoinPoint){
         logger.info("--------方法执行之前---------");
         //打印方法所有的参数列表
         Object[] args = proceedingJoinPoint.getArgs();
+        logger.info("--------方法所有的参数列表---------");
         for (Object arg : args){
             logger.info(arg + " , ");
         }
         Object retValue = null;
         try {
+            logger.info("--------方法执行---------");
             retValue = proceedingJoinPoint.proceed();
         } catch (Throwable throwable) {
+            logger.info("------方法抛出之后------");
             logger.info(throwable.getMessage());
         }finally {
             logger.info("------方法执行之后------");

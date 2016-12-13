@@ -18,13 +18,14 @@ public class MyTest {
     @Autowired
     private LoginService loginService;
     @Test
-    public  void test1(){
+    public void test1(){
         try {
             loginService.addUser("你 好");
         } catch (Exception e) {
-//            e.printStackTrace();
         }
-
+        loginService.delUser("你好");
+        loginService.inquiryUser("未知");
+        loginService.updateUser("买会员");
     }
 
 
