@@ -23,8 +23,10 @@ public class BasicAspect {
     public Object aroundDeleteArticle(ProceedingJoinPoint proceedingJoinPoint){
         logger.info("--------方法执行之前---------");
         //打印方法所有的参数列表
+        logger.info("--------方法名："+proceedingJoinPoint.getSignature().getName());
         Object[] args = proceedingJoinPoint.getArgs();
         for (Object arg : args){
+            logger.info("方法参数");
             logger.info(arg + " , ");
         }
         Object retValue = null;
